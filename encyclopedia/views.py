@@ -1,6 +1,8 @@
 # pyright: reportMissingModuleSource=false
-from django.shortcuts import render
+# pyright: reportMissingImports=false
 
+from django.shortcuts import render
+from markdown2 import Markdown
 from . import util
 
 
@@ -9,3 +11,5 @@ def index(request):
         "entries": util.list_entries()
     })
 
+def entry(request, title):
+    pass

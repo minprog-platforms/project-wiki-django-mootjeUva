@@ -1,3 +1,5 @@
+# pyright: reportMissingModuleSource=false
+
 import re
 
 from django.core.files.base import ContentFile
