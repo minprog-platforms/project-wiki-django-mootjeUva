@@ -1,3 +1,4 @@
+# pyright: reportMissingModuleSource=false
 from django.shortcuts import render
 
 from . import util
