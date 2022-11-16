@@ -2,7 +2,7 @@
 # pyright: reportMissingImports=false
 
 from django.shortcuts import render
-from markdown2 import Markdown
+from markdown2 import Markdown as markdown
 from . import util
 
 
@@ -12,4 +12,8 @@ def index(request):
     })
 
 def entry(request, title):
-    pass
+    wiki_entry = markdown().convert(util.get_entry(title))
+    return render(request, "encyclopedia/entry.html", {
+        "title": title,
+        "entry": wiki_entry
+    })

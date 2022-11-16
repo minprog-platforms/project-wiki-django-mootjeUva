@@ -1,3 +1,5 @@
+# pyright: reportMissingModuleSource=false
+
 from django.urls import path
 
 from . import views
