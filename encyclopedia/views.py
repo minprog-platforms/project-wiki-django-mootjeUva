@@ -1,6 +1,7 @@
 # pyright: reportMissingModuleSource=false
 # pyright: reportMissingImports=false
 
+
 from django.shortcuts import render
 from markdown2 import Markdown as markdown
 from . import util
@@ -17,3 +18,15 @@ def entry(request, title):
         "title": title,
         "entry": wiki_entry
     })
+
+def search(request, title):
+    return render(request, "encyclopedia/search.html", {
+        "title": title
+    })
+
+def newpage(request, title):
+    pass
+
+def editpage(request, title):
+    pass
+
