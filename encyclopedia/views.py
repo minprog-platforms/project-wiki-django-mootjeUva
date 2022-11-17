@@ -2,10 +2,11 @@
 # pyright: reportMissingImports=false
 
 
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from django.urls import reverse
 from markdown2 import Markdown as markdown
 from . import util
-
+import random
 
 def index(request):
     return render(request, "encyclopedia/index.html", {
@@ -20,13 +21,21 @@ def entry(request, title):
     })
 
 def search(request, title):
-    return render(request, "encyclopedia/search.html", {
-        "title": title
-    })
+    wiki_entry = util.get_entry(title)
+    return redirect(reverse('entry', args=[title]))
+    #return render(request, "encyclopedia/search.html", {
+    #    "title": title
+    #})
+
 
 def newpage(request, title):
     pass
 
 def editpage(request, title):
     pass
+
+def randompage(request):
+    all_entries = util.list_entries()
+    random_title = random.choice(all_entries)
+    return redirect(reverse('entry', args=[random_title]))
 

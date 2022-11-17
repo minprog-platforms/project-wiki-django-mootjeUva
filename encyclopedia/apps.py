@@ -1,3 +1,4 @@
+# pyright: reportMissingModuleSource=false
 from django.apps import AppConfig
 
 
