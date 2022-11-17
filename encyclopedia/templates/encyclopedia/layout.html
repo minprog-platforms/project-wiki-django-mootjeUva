@@ -14,7 +14,7 @@
                 <h2>Wiki</h2>
                 <form action="{% url 'search'  %}" method="POST" >
                     {% csrf_token %}
-                    {{ search_form }}
+                    {{ search_class }}
                 </form>
                 <div>
                     <a href="{% url 'index' %}">Home</a>

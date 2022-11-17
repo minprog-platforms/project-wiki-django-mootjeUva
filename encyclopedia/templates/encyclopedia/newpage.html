@@ -7,8 +7,9 @@
 {% block body %}
   <form action="{% url 'newpage' %}" method="POST">
     {% csrf_token %}
-    
-    <input type="submit" value="Submit">
+    Page Name: <input type="text" name="name" placeholder="Enter the page name" > <br> <br>
+    Content: <input type="text" name="content" >
+    <input type="submit" value="Create Page">
   </form>
 
 {% endblock %}

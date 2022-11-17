@@ -1,9 +1,17 @@
 {% extends "encyclopedia/layout.html" %}
 
 {% block title %}
-   Search Result: {{ title }}
+
+   Search Result
 {% endblock %}
 
 {% block body %}
-  
+
+  Search Result: <u>{{title}}</u> not found.
+   <br>
+  Do you mean?
+  <ul>
+   ...
+  </ul>
+  <a href="{% url 'index' %}"> Back Home </a>
 {% endblock %}
