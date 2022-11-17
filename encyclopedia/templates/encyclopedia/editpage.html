@@ -1,0 +1,15 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    Edit the {{ title }} page
+{% endblock %}
+
+{% block body %}
+
+    Edit the <b>{{title}}</b> page and press <u>Save Edit</u>.
+<br><br><br>
+    <form>
+        <input type="text" placeholder="Edit {{title}} " >
+        <input type="submit" value="Save Edit">
+    </form>
+{% endblock %}

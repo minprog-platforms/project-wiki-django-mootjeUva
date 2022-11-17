@@ -20,6 +20,13 @@ def entry(request, title):
         "entry": wiki_entry
     })
 
+def editpage(request, title):
+    wiki_entry = markdown().convert(util.get_entry(title))
+    return render(request, "encyclopedia/editpage.html", {
+        "title": title,
+        "entry": wiki_entry
+    })
+
 def search(request, title):
     wiki_entry = util.get_entry(title)
     return redirect(reverse('entry', args=[title]))
@@ -31,8 +38,6 @@ def search(request, title):
 def newpage(request, title):
     pass
 
-def editpage(request, title):
-    pass
 
 def randompage(request):
     all_entries = util.list_entries()
