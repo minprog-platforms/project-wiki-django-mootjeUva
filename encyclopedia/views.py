@@ -1,6 +1,7 @@
 # pyright: reportMissingModuleSource=false
 # pyright: reportMissingImports=false
 
+
 from django.shortcuts import render, redirect
 from django.urls import reverse
 from markdown2 import Markdown as markdown
